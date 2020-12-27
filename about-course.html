@@ -1,0 +1,984 @@
+<!doctype html>
+<!--[if IE 9]> <html class="no-js ie9 fixed-layout" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js " lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Site Meta -->
+    <title>Edulogy</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+	<!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i" rel="stylesheet"> 
+	
+    <!-- Custom & Default Styles -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="style.css">
+
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+
+
+        /* Modal start*/
+             
+             
+.modal-open {
+	overflow: hidden
+}
+
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1050;
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	outline: 0
+}
+
+.modal-dialog {
+	position: relative;
+	width: auto;
+	margin: .5rem;
+	pointer-events: none
+}
+
+.modal.fade .modal-dialog {
+	transition: -webkit-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+	-webkit-transform: translate(0, -50px);
+	transform: translate(0, -50px)
+}
+
+@media (prefers-reduced-motion:reduce) {
+	.modal.fade .modal-dialog {
+		transition: none
+	}
+}
+
+.modal.show .modal-dialog {
+	-webkit-transform: none;
+	transform: none
+}
+
+.modal.modal-static .modal-dialog {
+	-webkit-transform: scale(1.02);
+	transform: scale(1.02)
+}
+
+.modal-dialog-scrollable {
+	display: -ms-flexbox;
+	display: flex;
+	max-height: calc(100% - 1rem)
+}
+
+.modal-dialog-scrollable .modal-content {
+	max-height: calc(100vh - 1rem);
+	overflow: hidden
+}
+
+.modal-dialog-scrollable .modal-footer,
+.modal-dialog-scrollable .modal-header {
+	-ms-flex-negative: 0;
+	flex-shrink: 0
+}
+
+.modal-dialog-scrollable .modal-body {
+	overflow-y: auto
+}
+
+.modal-dialog-centered {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	min-height: calc(100% - 1rem)
+}
+
+.modal-dialog-centered::before {
+	display: block;
+	height: calc(100vh - 1rem);
+	height: -webkit-min-content;
+	height: -moz-min-content;
+	height: min-content;
+	content: ""
+}
+
+.modal-dialog-centered.modal-dialog-scrollable {
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 100%
+}
+
+.modal-dialog-centered.modal-dialog-scrollable .modal-content {
+	max-height: none
+}
+
+.modal-dialog-centered.modal-dialog-scrollable::before {
+	content: none
+}
+
+.modal-content {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 100%;
+	pointer-events: auto;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: .3rem;
+	outline: 0
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1040;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000
+}
+
+.modal-backdrop.fade {
+	opacity: 0
+}
+
+.modal-backdrop.show {
+	opacity: .5
+}
+
+.modal-header {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	padding: 1rem 1rem;
+	border-bottom: 1px solid #dee2e6;
+	border-top-left-radius: calc(.3rem - 1px);
+	border-top-right-radius: calc(.3rem - 1px)
+}
+
+.modal-header .close {
+	padding: 1rem 1rem;
+	margin: -1rem -1rem -1rem auto
+}
+
+.modal-title {
+	margin-bottom: 0;
+	line-height: 1.5
+}
+
+.modal-body {
+	position: relative;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1rem
+}
+
+.modal-footer {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	padding: .75rem;
+	border-top: 1px solid #dee2e6;
+	border-bottom-right-radius: calc(.3rem - 1px);
+	border-bottom-left-radius: calc(.3rem - 1px)
+}
+
+.modal-footer>* {
+	margin: .25rem
+}
+
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll
+}
+
+@media (min-width:576px) {
+	.modal-dialog {
+		max-width: 500px;
+		margin: 1.75rem auto
+	}
+	.modal-dialog-scrollable {
+		max-height: calc(100% - 3.5rem)
+	}
+	.modal-dialog-scrollable .modal-content {
+		max-height: calc(100vh - 3.5rem)
+	}
+	.modal-dialog-centered {
+		min-height: calc(100% - 3.5rem)
+	}
+	.modal-dialog-centered::before {
+		height: calc(100vh - 3.5rem);
+		height: -webkit-min-content;
+		height: -moz-min-content;
+		height: min-content
+	}
+	.modal-sm {
+		max-width: 300px
+	}
+}
+
+@media (min-width:992px) {
+	.modal-lg,
+	.modal-xl {
+		max-width: 800px
+	}
+}
+
+@media (min-width:1200px) {
+	.modal-xl {
+		max-width: 1140px
+	}
+}
+
+
+
+        /* modal end */
+
+.text-dark {
+	color: #343a40!important
+}
+
+
+
+        .panel {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+        }
+        
+        .panel-body {
+            padding: 15px
+        }
+        
+        .panel-heading {
+            padding: 10px 15px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px
+        }
+        
+        .panel-heading>.dropdown .dropdown-toggle {
+            color: inherit
+        }
+        
+        .panel-title {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 16px;
+            color: inherit
+        }
+        
+        .panel-title>.small,
+        .panel-title>.small>a,
+        .panel-title>a,
+        .panel-title>small,
+        .panel-title>small>a {
+            color: inherit
+        }
+        
+        .panel-footer {
+            padding: 10px 15px;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px
+        }
+        
+        
+        .panel-primary {
+            border-color: #337ab7
+        }
+        
+        .panel-primary>.panel-heading {
+            color: #fff;
+            background-color: #337ab7;
+            border-color: #337ab7
+        }
+        
+        .panel-primary>.panel-heading+.panel-collapse>.panel-body {
+            border-top-color: #337ab7
+        }
+        
+        .panel-primary>.panel-heading .badge {
+            color: #337ab7;
+            background-color: #fff
+        }
+        
+        .panel-primary>.panel-footer+.panel-collapse>.panel-body {
+            border-bottom-color: #337ab7
+        }
+        
+        
+        
+        
+        </style>
+        
+
+</head>
+<body>  
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src="images/loader.gif" alt="">
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+    
+        <!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Begin # DIV Form -->
+            <div id="div-forms">
+                <form id="login-form">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="flaticon-add" aria-hidden="true"></span>
+                    </button>
+                    <div class="modal-body">
+                        <input class="form-control" type="text" placeholder="What you are looking for?" required>
+                    </div>
+                </form><!-- End # Login Form -->
+            </div><!-- End # DIV Form -->
+        </div>
+    </div>
+</div>
+<!-- END # MODAL LOGIN -->
+
+<header class="header header-normal">
+    <div class="topbar clearfix">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="col-md-6 col-sm-6 text-left">
+                    <p>
+                        <strong><i class="fa fa-phone"></i></strong> +90 543 123 45 67 &nbsp;&nbsp;
+                        <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">info@yoursite.com</a>
+                    </p>
+                </div><!-- end left -->
+                <div class="col-md-6 col-sm-6 hidden-xs text-right">
+                    <div class="social">
+                        <a class="facebook" href="#" data-tooltip="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>              
+                        <a class="twitter" href="#" data-tooltip="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a class="google" href="#" data-tooltip="tooltip" data-placement="bottom" title="Google Plus"><i class="fa fa-google-plus"></i></a>
+                        <a class="linkedin" href="#" data-tooltip="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a class="pinterest" href="#" data-tooltip="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                    </div><!-- end social -->
+                </div><!-- end left -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end topbar -->
+
+    <div class="container">
+        <nav class="navbar navbar-default yamm">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="logo-normal">
+                    <a class="navbar-brand" href="index.html"><img src="images/logo-dark.png" alt=""></a>
+                </div>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                      <li><a href="index.html"> <span class="fa fa-home"></span> Home</a></li>
+                         
+                            <!--About Menu-->
+                            <li>
+                                <a href="about-us.html"><span class="fa fa-users"></span> About-Us</a>
+                               </li>
+
+                               <li>
+                                <a href="about-course.html"><span class="fa fa-book"></span> Courses</a>
+                               </li>
+                       
+
+                                    <!--Gallery Menu-->
+                                    <li class="dropdown hassubmenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-picture-o"></span> Gallery <span class="fa fa-angle-down"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="gallery.html">School Gallery</a></li>
+                                            <li><a href="book-gallery.html">Book Gallery</a></li>
+                                        </ul>
+                                    </li>
+                         
+                         
+                            <li class="dropdown hassubmenu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <span class="fa fa-angle-down"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                            <li><a href="blog.html">Blog Right Sidebar</a></li>
+                            <li><a href="blog-1.html">Blog Left Sidebar</a></li>
+                            <li><a href="blog-2.html">Blog Grid Sidebar</a></li>
+                            <li><a href="blog-3.html">Blog Grid Fullwidth</a></li>
+                            <li><a href="blog-single.html">Blog Single</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="page-contact.html">Contact</a></li>
+                    <li class="iconitem"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-search"></i></a></li>
+                    <li class="iconitem"><a class="shopicon" href="shop-cart.html"><i class="fa fa-shopping-basket"></i> &nbsp;(0)</a></li>
+                </ul>
+            </div>
+        </nav><!-- end navbar -->
+    </div><!-- end container -->
+</header>
+        <section class="section">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h3>About - Course</h3>
+                    <p>
+                        Sarigama..., located at the heart of the Chennai city specialises
+                         in Music & dance classes and Orchestra.
+
+                          The institute is celebrated for its fine facilities,
+                          which include imported keyboards & musical instruments,
+                          state of the art practice rooms for dance equipped 
+                          with quality sound systems and professional artists 
+                          with over a decade experience in training.
+
+                               We take pride in embracing each individual's 
+                               interests as our own. If you are passionate about 
+                               learning Music & Dance, Our institute will be one of 
+                               the best choices to learn and nurture your talent.
+                    </p>
+                </div><!-- end title -->
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="box testimonial">
+                            <p class="testiname"><strong><img src="images/home/first-section/01.jpg" alt="" class="img-circle"> Courses </strong></p>
+                            <p>Expertise teaching and professional training under one roof for all styles of music and Bharathnatyam. </p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div><!-- end testimonial -->
+                    </div><!-- end col -->
+
+                    <div class="col-md-4">
+                        <div class="box testimonial">
+                            <p class="testiname"><strong><img src="images/home/first-section/02.png" alt="" class="img-circle"> Study materials</strong></p>
+                            <p>Courses are supported with research oriented guidance through Books and CD's of Guruji Natyacharya.</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div><!-- end testimonial -->
+                    </div><!-- end col -->
+
+                    <div class="col-md-4">
+                        <div class="box testimonial">
+                            <p class="testiname"><strong><img src="images/home/first-section/03.png" alt="" class="img-circle"> Online courses</strong></p>
+                            <p>Direct teaching of music and Bharathanatyam with audio supports to learned and laymen worldwide.</p>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div><!-- end testimonial -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+
+
+        <section style="margin-top: -90px;" class="section">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4 ">
+                        <div class="custom-module wow slideInRight">
+                            <!-- <img src="upload/device_01.png" alt="" class="img-responsive wow slideInLeft"> -->
+                                <div class="panel panel-primary">
+                                <div class="panel-heading">Vocal
+                                </div>
+                                <img src="images/about/about-course/vocal/01.jpg" width="400px;" class="img-responsive" >
+                        
+                                <div class="panel-body">
+                                   
+                                    <p>usic classes are taken in Carnatic and Hindhusthani style. 
+                                        Advanced specialization courses like Vocalization, 
+                                        voice culture, Art of improvizVocal mation(Raga Aalapana) 
+                                        in Carnatic and Hindustani style are taught.</p>
+                                      <hr>
+                                           <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModalVocal">
+                                                Click More Details
+                                                  </button>
+
+                                                   <!-- The Modal -->
+                                                     <div class="modal" id="myModalVocal">
+                                                        <div class="modal-dialog modal-dialog-scrollable">
+                                                            <div class="modal-content">
+  
+                                                           <!-- Modal Header -->
+                                                           <div class="modal-header">
+                                                            <h1 class="modal-title">Vocal Music</h1>
+                                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                                      </div>
+    
+                                                  <!-- Modal body -->
+                                                      <div class="modal-body">
+
+                                                        <img src="images/about/about-course/vocal/vocal_banner.jpg" class="img-responsive">
+                        
+                                                        <h4 style="color: brown; text-decoration-line: underline; text-decoration-style: wavy;">
+                                                            Vocal Music
+                                                        </h4>
+                                                         <p><a href="">Carnatic</a> - Traditional vocal music classes in Carnatic style are taken by 
+                                                             Guruji Natyacharya Sri S Balachandra Raju and Nadha abhinaya Ranjani 
+                                                             B. Shivaranjani M.A M Phil (Music), daugter and disple of Guruji and B. 
+                                                             Bala sushruthi Raju Vadhya kalaimani. The training start right from basics like Swaravali, 
+                                                             Alankaras, etc. to advanced levels like varanams and krithis. Special courses available on 
+                                                             raga exposition techniques. Also, special thematic 
+                                                             courses like sessions on Thiruppugazh, Thiruvempavai, Thiruppavai, etc. are also available.</p>
+                                                     
+                                                                
+                                                        <hr >
+                                                             <p><a href="">Hindusthani </a>- Authentic and technically sound vocal classes 
+                                                                are taken in Hindhusthani style also. Hindhusthani music
+                                                                 is taught here in Gwalior Gharana.
+                                                                 All levels of classes are covered here.</p>
+                                                             
+                                                                 
+                                                        <hr >
+                                                                     
+                                                                 <p><a href="">Voice culture</a> - Special courses on voice culture
+                                                                      are taken up here. These courses are tailor-made for each 
+                                                                      individual according to their personal needs and problems. 
+                                                                      Special trainings are given for stage singers to take up recordings, 
+                                                                      modulations, husky voice, identifing notes, mic techniques and track singing. 
+                                                                      Voice corrections are made for defective voices like the nasal 
+                                                                      dominated ones, coarse voice, etc. These special courses are taken
+                                                                       in studio of Natyacharya's School of Music and Dance. 
+                                                                       Teaching of these courses are given to 
+                                                                     students as mp3 recordings for their home practice.</p>
+                                                
+                                                                     
+                            
+                                                                          </div>
+    
+   
+                                                                        <!-- Modal footer -->
+  
+                                                                        <div class="modal-footer">
+   
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                       </div>    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                            </div><!-- end module -->
+                                        </div><!-- end col -->
+            
+                  
+
+
+
+
+                    <div class="col-md-4 ">
+                        <div class="custom-module wow slideInLeft">
+                            <!-- <img src="upload/device_01.png" alt="" class="img-responsive wow slideInLeft"> -->
+                                <div class="panel panel-primary">
+                                <div class="panel-heading">Bharatha Natyam</div>
+                                <img src="images/about/about-course/bharata/01.jpg" width="400px;" class="img-responsive" >
+                                <div class="panel-body">
+                                    <p>Bharathanatyam is taught in the school in Kanchivaram style.
+                                         Special seesions on adavus or a particular item is also available.</p>
+                                      <hr class="invis" >
+                                           <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModalBharathanatyam">
+                                                Click More Details
+                                                  </button>
+
+                                                   <!-- The Modal -->
+                                                     <div class="modal" id="myModalBharathanatyam">
+                                                        <div class="modal-dialog modal-dialog-scrollable">
+                                                            <div class="modal-content">
+  
+                                                           <!-- Modal Header -->
+                                                           <div class="modal-header">
+                                                            <h1 class="modal-title">Bharathanatyam</h1>
+                                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                                      </div>
+    
+                                                  <!-- Modal body -->
+                                                      <div class="modal-body">
+                                                        <img src="images/about/about-course/bharata/bharata-banner.jpg" class="img-responsive">
+                        
+                                                        <h4 style="color: brown; text-decoration-line: underline; text-decoration-style: wavy;">
+                                                            Bharatha Natyam
+                                                        </h4>
+                                                         <p><a href="">Bharathanatyam</a> - Traditional Bharatha natyam Classes are taken in Kanchivaram style. 
+                                                            Guruji Natyacharya Sri S Balachandra Raju is an eminent Guru teaching Bharatha natyam dance
+                                                             in research oriented classical method. Guruji Natyacharya Sri S Balachandra Raju has composed
+                                                              and choreoghraphed many Dance items and also keeps the traditional numbers going.
+                                                               Guruji Natyacharya Sri S Balachandra Raju is the disciple of Udupi Lakshmi Narayana
+                                                                in Bharatha natyam style. Guruji Natyacharya Sri S Balachandra Raju teaches Bharatha natyam classes 
+                                                            in Natyacharyas School of Music and Dance five levels to reach Ranga pravesam (arangetram).</p>
+                                                     
+                                                                
+                                                        <hr >
+                                                             <p>Special provisions are available for the students who need
+                                                                  special margam or additional margam as per their requirements in advance level.
+                                                                   Classes for Bharatha natyam Teaching techniques and Nattuvangam is also taken
+                                                                    by Guruji Natyacharya Sri S Balachandra Raju in systematic manner and professional
+                                                                     method in practical way and theoretical explanations. Necessary Vocal knowledge and rhythm 
+                                                                 ( laya ) calculations will advised and taught by Guruji in the Nattuvangam courses.</p>
+                                                             
+                                                            
+
+                                                                        </div>
+    
+   
+                                                                        <!-- Modal footer -->
+  
+                                                                        <div class="modal-footer">
+   
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                       </div>    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                            </div><!-- end module -->
+                                        </div><!-- end col -->
+            
+
+                                        <div class="col-md-4 ">
+                                            <div class="custom-module wow slideInRight">
+                                                <!-- <img src="upload/device_01.png" alt="" class="img-responsive wow slideInLeft"> -->
+                                                    <div class="panel panel-primary">
+                                                    <div class="panel-heading">Nattuvangam
+                                                    </div>
+                                                    <img width="400px;" 
+                                                    src="images/about/about-course/Nattuvangam/01.jpg" 
+                                                    alt="" class="img-responsive">
+                                         
+                                                    <div class="panel-body">
+                                                        <p>Our Institute's specialized course which is not offered in many institutions
+                                                             is taught in 3 major categories for aspiring Dancers and
+                                                             Dance Teachers.</p>
+                                                         <hr>
+                                                               <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModalNattuvangam">
+                                                                    Click More Details
+                                                                      </button>
+                    
+                                                                       <!-- The Modal -->
+                                                                         <div class="modal" id="myModalNattuvangam">
+                                                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                                                <div class="modal-content">
+                      
+                                                                               <!-- Modal Header -->
+                                                                               <div class="modal-header">
+                                                                                <h1 class="modal-title">Nattuvangam</h1>
+                                                                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                                                          </div>
+                        
+                                                                      <!-- Modal body -->
+                                                                          <div class="modal-body">
+                                                                            <img src="images/about/about-course/Nattuvangam/nattuvangam_banner.jpg" class="img-responsive">
+                        
+                                                                            <h4 style="color: brown; text-decoration-line: underline; text-decoration-style: wavy;">
+                                                                                Nattuvangam
+                                                                            </h4>
+                                                                             <p><a href="">Nattuvangam</a> - Our Institute's specialized 
+                                                                                course which is not offered in many institutions is taught 
+                                                                                in 3 major categories for aspiring Dancers and Dance Teachers.
+                                                                            </p>
+                                                                         
+                                                                                    
+                                                                                 <p>i) Nattuvangam Introduction.</p>
+                                                                                 <p>ii) Professional Nattuvangam - Level 1.</p>
+                                                                                 <p>iii) Professional Nattuvangam - Level 2 (Art of Dance Composing, 
+                                                                                     Theatre performance, Costume designing and Orchestra)
+                                                                                    The institute's specialized course available is
+                                                                                     "Nattuvangam" - specially available for budding 
+                                                                                     dancers and aspiring Dance teachers.</p>
+                                                                           
+
+                                                                                            </div>
+                        
+                       
+                                                                                            <!-- Modal footer -->
+                      
+                                                                                            <div class="modal-footer">
+                       
+                                                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                                           </div>    
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                          </div>
+                                                                </div><!-- end module -->
+                                                            </div><!-- end col -->
+                                             
+                </div>
+
+                <div class="row">                                                            
+                    <div class="col-md-6">
+                        <div class="custom-module wow slideInLeft">
+                            <!-- <img src="upload/device_01.png" alt="" class="img-responsive wow slideInLeft"> -->
+                                <div class="panel panel-primary">
+                                <div class="panel-heading">Instrumental Music Classes
+                                </div>
+                                <img src="images/about/about-course/Instrumental/01.png" width="600px;" alt="" class="img-responsive">
+                            
+                                <div class="panel-body">
+                                    <p>
+                                        Instrumental music classes are taken in Carnatic, Hindhusthani and Western styles. Advanced specialization courses in all instrumental are also taken for special areas like professional Flute, keyboard, Violin, Veena playing.
+                                    </p>
+                                    
+                                           <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModalInstrumental">
+                                                Click More Details
+                                                  </button>
+
+                                                   <!-- The Modal -->
+                                                     <div class="modal" id="myModalInstrumental">
+                                                        <div class="modal-dialog modal-dialog-scrollable">
+                                                            <div class="modal-content">
+  
+                                                           <!-- Modal Header -->
+                                                           <div class="modal-header">
+                                                            <h1 class="modal-title">Instrumental</h1>
+                                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                                      </div>
+    
+                                                  <!-- Modal body -->
+                                                      <div class="modal-body">
+                                                     
+                                                        <img src="images/about/about-course/Instrumental/inst-banner.jpg" class="img-responsive">
+                        
+                                                        <h4 style="color: brown; text-decoration-line: underline; text-decoration-style: wavy;">
+                                                            Instrumental Music Classes
+                                                        </h4>
+                                                        <p>
+                                                            Natyacharyas School of Music encourage and 
+                                                            giving training in basic level to advance level 
+                                                            in all musical instruments in Carnatic style, Hindusthani 
+                                                            style and western style in the following instruments. 
+                                                            The classes are provide one to one method and individual training. 
+                                                            School providing all musical instruments 
+                                                            for learning purpose. Flute, Saxophone,
+                                                             Harmonica and key-flute must bring by the students.
+                                                        </p>
+                                                         <p><a href="">Carnatic Style</a> - Flute, Veena, Violin, Viola, Guitar, Mandolin, 
+                                                            Harmonium, Jalatharangam, Clarinet, Saxophone, Key flute, Harmonica, Banjo, Bulbulthara,
+                                                             Muga veena, Vichithra Veena (Gottu vadhyam), Hawaain Guitar, Rudra Veena.</p>
+                                                     
+                                                                
+                                                        <hr >
+                                                             <p><a href="">Hindusthani Style </a>- Keyboard, Harmonium, Sitar,
+                                                                 Shehnai, Bansuri, Santoor, Sarod, Esraj, Dilrupa, violin, RudraVeena.</p>
+                                                             
+                                                                 
+                                                        <hr >
+                                                                     
+                                                        <p><a href="">Western Style </a> - Keyboard, Guitar, Violin, Mandolin,
+                                                            Harmonica, saxophone, keyflute.
+                                                        </p>
+                                       
+                                                        <hr >
+                                                                     
+                                                                 <p><a href="">Laya Vadhya (Rhythm Instruments) </a> - Mrudangam, Tabla, Kanjeera, 
+                                                                    Ghatam, Khole, Dolak, TablaTarang, Dolki.
+                                                                 </p>
+                                                
+                                                                     
+                            
+                                             
+                                                                        </div>
+    
+   
+                                                                        <!-- Modal footer -->
+  
+                                                                        <div class="modal-footer">
+   
+                                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                       </div>    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                            </div><!-- end module -->
+                                        </div><!-- end col -->
+            
+                  
+                                        <div class="col-md-6">
+                                            <div class="custom-module wow slideInRight">
+                                                <!-- <img src="upload/device_01.png" alt="" class="img-responsive wow slideInLeft"> -->
+                                                    <div class="panel panel-primary">
+                                                    <div class="panel-heading">Shivaranjani Publications
+                                               </div>
+                                               <img src="images/about/about-course/Publication/01.png" width="600px;" class="img-responsive" >
+                        
+                                               <div class="panel-body">
+                                                        <p>
+                                                            A best fine arts Book Publishers and Music, Bharatha natyam and Devotional books publishers.
+                                                        </p>
+                                                           <hr class="invis">
+                                                               <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModalShivaranjaniPublications">
+                                                                    Click More Details
+                                                                      </button>
+                    
+                                                                       <!-- The Modal -->
+                                                                         <div class="modal" id="myModalShivaranjaniPublications">
+                                                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                                                <div class="modal-content">
+                      
+                                                                               <!-- Modal Header -->
+                                                                               <div class="modal-header">
+                                                                                <h1 class="modal-title">Shivaranjani Publications</h1>
+                                                                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                                                          </div>
+                        
+                                                                      <!-- Modal body -->
+                                                                          <div class="modal-body">
+                                                                         
+                                                                            <img src="images/about/about-course/Publication/pub-banner.jpg" class="img-responsive">
+                        
+                                                                            <h4 style="color: brown; text-decoration-line: underline; text-decoration-style: wavy;">
+                                                                                Shivaranjani Publications
+                                                                            </h4>
+                                                                             <p><a href="">Publications</a> - Shivaranjani Publications is one of the best 
+                                                                                Fine art Music Publishers in South india. Especially this publishers are publishing
+                                                                                 How to learn Musical Instruments and Bharatha natyam by self learning method.</p>
+                                                                         
+                                                                                    
+                                                                            <hr >
+                                                                                 <p><a href="">Self learning books  </a>- Shivaranjani Publications is Natyacharyas
+                                                                                     own Publications which releases his books on music, musicology, dance and devotion.
+                                                                                      The publications has released at least 54 books of Guruji in Tamizh, Telugu, 
+                                                                                      English and Malayalam. Most of these are the research works of Guruji.
+                                                                                       Books are related with How to learn
+                                                                                     in self method is the mile stone for self learning method.</p>
+                                                                                 
+                                                                                     
+                                                                            <hr >
+                                                                                         
+                                                                                     <p><a href="">Books in all language</a> - Shivaranjani Publications released Gurujis books
+                                                                                         translation in Telugu written by Gurujis wife Srimathy padmini Raju. Nadha Abhinaya 
+                                                                                         Ranjani Gurujis daughter wrote poems and translations of Guruji Natyacharya 
+                                                                                         Sri S Balachandra Rajus Music and Dance books in English and in Hindi. Gurujis son
+                                                                                          Vadhya kalaimani B . Balasushruthi Raju also wrote books How to play film tunes ( Tamil and English)
+                                                                                         through the tunes any one can learn even the basic lessons very systematically.</p>
+                                                                    
+                                                                                         
+                                                
+                                                                                            </div>
+                        
+                       
+                                                                                            <!-- Modal footer -->
+                      
+                                                                                            <div class="modal-footer">
+                       
+                                                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                                           </div>    
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                          </div>
+                                                                </div><!-- end module -->
+                                                            </div><!-- end col -->
+                                                        </div>
+             
+                                                        </div><!-- end container -->
+        </section>
+
+
+      
+        <div class="copyrights">
+            <div class="container">
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <div class="cop-logo">
+                            <a href="#"><img src="images/logo.png" alt=""></a>
+                        </div>
+                    </div>
+
+                    <div class="pull-right">
+                        <div class="footer-links">
+                            <ul class="list-inline">
+                                <li>Design : <a href="https://html.design">HTML.Design</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end container -->
+        </div><!-- end copy -->
+    </div><!-- end wrapper -->
+
+    <!-- jQuery Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- VIDEO BG PLUGINS -->
+    <script src="js/videobg.js"></script>
+
+</body>
+</html>
