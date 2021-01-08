@@ -43,10 +43,337 @@
     <![endif]-->
     
     <style>
-        .same-books-size {
+        .same-gallery-size {
              height: 240px;
          }
     </style>
+
+<style>
+
+
+    /* Modal start*/
+         
+         
+.modal-open {
+overflow: hidden
+}
+
+.modal-open .modal {
+overflow-x: hidden;
+overflow-y: auto
+}
+
+.modal {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1050;
+display: none;
+width: 100%;
+height: 100%;
+overflow: hidden;
+outline: 0
+}
+
+.modal-dialog {
+position: relative;
+width: auto;
+margin: .5rem;
+pointer-events: none
+}
+
+.modal.fade .modal-dialog {
+transition: -webkit-transform .3s ease-out;
+transition: transform .3s ease-out;
+transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+-webkit-transform: translate(0, -50px);
+transform: translate(0, -50px)
+}
+
+@media (prefers-reduced-motion:reduce) {
+.modal.fade .modal-dialog {
+    transition: none
+}
+}
+
+.modal.show .modal-dialog {
+-webkit-transform: none;
+transform: none
+}
+
+.modal.modal-static .modal-dialog {
+-webkit-transform: scale(1.02);
+transform: scale(1.02)
+}
+
+.modal-dialog-scrollable {
+display: -ms-flexbox;
+display: flex;
+max-height: calc(100% - 1rem)
+}
+
+.modal-dialog-scrollable .modal-content {
+max-height: calc(100vh - 1rem);
+overflow: hidden
+}
+
+.modal-dialog-scrollable .modal-footer,
+.modal-dialog-scrollable .modal-header {
+-ms-flex-negative: 0;
+flex-shrink: 0
+}
+
+.modal-dialog-scrollable .modal-body {
+overflow-y: auto
+}
+
+.modal-dialog-centered {
+display: -ms-flexbox;
+display: flex;
+-ms-flex-align: center;
+align-items: center;
+min-height: calc(100% - 1rem)
+}
+
+.modal-dialog-centered::before {
+display: block;
+height: calc(100vh - 1rem);
+height: -webkit-min-content;
+height: -moz-min-content;
+height: min-content;
+content: ""
+}
+
+.modal-dialog-centered.modal-dialog-scrollable {
+-ms-flex-direction: column;
+flex-direction: column;
+-ms-flex-pack: center;
+justify-content: center;
+height: 100%
+}
+
+.modal-dialog-centered.modal-dialog-scrollable .modal-content {
+max-height: none
+}
+
+.modal-dialog-centered.modal-dialog-scrollable::before {
+content: none
+}
+
+.modal-content {
+position: relative;
+display: -ms-flexbox;
+display: flex;
+-ms-flex-direction: column;
+flex-direction: column;
+width: 100%;
+pointer-events: auto;
+background-color: #fff;
+background-clip: padding-box;
+border: 1px solid rgba(0, 0, 0, .2);
+border-radius: .3rem;
+outline: 0
+}
+
+.modal-backdrop {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1040;
+width: 100vw;
+height: 100vh;
+background-color: #000
+}
+
+.modal-backdrop.fade {
+opacity: 0
+}
+
+.modal-backdrop.show {
+opacity: .5
+}
+
+.modal-header {
+display: -ms-flexbox;
+display: flex;
+-ms-flex-align: start;
+align-items: flex-start;
+-ms-flex-pack: justify;
+justify-content: space-between;
+padding: 1rem 1rem;
+border-bottom: 1px solid #dee2e6;
+border-top-left-radius: calc(.3rem - 1px);
+border-top-right-radius: calc(.3rem - 1px)
+}
+
+.modal-header .close {
+padding: 1rem 1rem;
+margin: -1rem -1rem -1rem auto
+}
+
+.modal-title {
+margin-bottom: 0;
+line-height: 1.5
+}
+
+.modal-body {
+position: relative;
+-ms-flex: 1 1 auto;
+flex: 1 1 auto;
+padding: 1rem
+}
+
+.modal-footer {
+display: -ms-flexbox;
+display: flex;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+-ms-flex-align: center;
+align-items: center;
+-ms-flex-pack: end;
+justify-content: flex-end;
+padding: .75rem;
+border-top: 1px solid #dee2e6;
+border-bottom-right-radius: calc(.3rem - 1px);
+border-bottom-left-radius: calc(.3rem - 1px)
+}
+
+.modal-footer>* {
+margin: .25rem
+}
+
+.modal-scrollbar-measure {
+position: absolute;
+top: -9999px;
+width: 50px;
+height: 50px;
+overflow: scroll
+}
+
+@media (min-width:576px) {
+.modal-dialog {
+    max-width: 500px;
+    margin: 1.75rem auto
+}
+.modal-dialog-scrollable {
+    max-height: calc(100% - 3.5rem)
+}
+.modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 3.5rem)
+}
+.modal-dialog-centered {
+    min-height: calc(100% - 3.5rem)
+}
+.modal-dialog-centered::before {
+    height: calc(100vh - 3.5rem);
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content
+}
+.modal-sm {
+    max-width: 300px
+}
+}
+
+@media (min-width:992px) {
+.modal-lg,
+.modal-xl {
+    max-width: 800px
+}
+}
+
+@media (min-width:1200px) {
+.modal-xl {
+    max-width: 1140px
+}
+}
+
+
+
+    /* modal end */
+
+.text-dark {
+color: #343a40!important
+}
+
+
+
+    .panel {
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+    }
+    
+    .panel-body {
+        padding: 15px
+    }
+    
+    .panel-heading {
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px
+    }
+    
+    .panel-heading>.dropdown .dropdown-toggle {
+        color: inherit
+    }
+    
+    .panel-title {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 16px;
+        color: inherit
+    }
+    
+    .panel-title>.small,
+    .panel-title>.small>a,
+    .panel-title>a,
+    .panel-title>small,
+    .panel-title>small>a {
+        color: inherit
+    }
+    
+    .panel-footer {
+        padding: 10px 15px;
+        background-color: #f5f5f5;
+        border-top: 1px solid #ddd;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px
+    }
+    
+    
+    .panel-primary {
+        border-color: #337ab7
+    }
+    
+    .panel-primary>.panel-heading {
+        color: #fff;
+        background-color: #337ab7;
+        border-color: #337ab7
+    }
+    
+    .panel-primary>.panel-heading+.panel-collapse>.panel-body {
+        border-top-color: #337ab7
+    }
+    
+    .panel-primary>.panel-heading .badge {
+        color: #337ab7;
+        background-color: #fff
+    }
+    
+    .panel-primary>.panel-footer+.panel-collapse>.panel-body {
+        border-bottom-color: #337ab7
+    }
+    
+    
+    
+    
+    </style>
+    
 
 </head>
 <body>  
@@ -84,8 +411,8 @@
             <div class="row-fluid">
                 <div class="col-md-6 col-sm-6 text-left">
                     <p>
-                        <strong><i class="fa fa-phone"></i></strong> +90 543 123 45 67 &nbsp;&nbsp;
-                        <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:#">info@yoursite.com</a>
+                        <strong><i class="fa fa-phone"></i></strong> 9884455286, 9445610185, 9789839135 &nbsp;&nbsp;
+                        <strong><i class="fa fa-envelope"></i></strong> <a href="mailto:natyacharyaschools@gmail.com">natyacharyaschools@gmail.com</a>
                     </p>
                 </div><!-- end left -->
                 <div class="col-md-6 col-sm-6 hidden-xs text-right">
@@ -116,7 +443,7 @@
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav fixed-top navbar-nav navbar-right">
                       <li><a href="index.html"> <span class="fa fa-home"></span> Home</a></li>
                          
                             <!--About Menu-->
@@ -124,22 +451,17 @@
                                 <a href="about-us.html"><span class="fa fa-users"></span> About-Us</a>
                                </li>
 
+                               <!-- Course Menu -->
                                <li>
                                 <a href="about-course.html"><span class="fa fa-book"></span> Courses</a>
                                </li>
-                       
 
-                                    <!--books Menu-->
-                                    <li class="dropdown hassubmenu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="fa fa-picture-o"></span> books <span class="fa fa-angle-down"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="books.html">School books</a></li>
-                                            <li><a href="book-books.html">Book books</a></li>
-                                        </ul>
-                                    </li>
-                         
-                         
-                            <li class="dropdown hassubmenu">
+                                           <!--Gallery Menu-->
+                                            <li><a href="gallery.html"><span class="fa fa-picture-o"></span> School Gallery</a></li>
+                                            <li><a href="book-gallery.html"><span class="fa fa-book"></span> Books</a></li>
+                           
+                                 
+                         <!--   <li class="dropdown hassubmenu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog <span class="fa fa-angle-down"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                             <li><a href="blog.html">Blog Right Sidebar</a></li>
@@ -148,648 +470,279 @@
                             <li><a href="blog-3.html">Blog Grid Fullwidth</a></li>
                             <li><a href="blog-single.html">Blog Single</a></li>
                         </ul>
-                    </li>
+                    </li> -->
+
                     <li><a href="page-contact.html">Contact</a></li>
                     <li class="iconitem"><a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-search"></i></a></li>
                     <li class="iconitem"><a class="shopicon" href="shop-cart.html"><i class="fa fa-shopping-basket"></i> &nbsp;(0)</a></li>
                 </ul>
             </div>
         </nav><!-- end navbar -->
+
     </div><!-- end container -->
 </header>
 
+        <!--Gallery Page Start-->
 
-
-        <!--books Page Start-->
-
-        <section class="section gb">
+<br><br>
+        
+        <section class="section gb nopadtop">
             <div class="container">
-                <div class="section-title text-center">
-                    <h3>Our books</h3>
-                </div><!-- end title -->
+                <!-- <div class="boxed boxedp4">
+                    <div class="shop-top">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                                <p> Showing 1–9 of 11 results</p>
+                            </div>
+                            <div class="pull-right">
+                            <select class="selectpicker">
+                                <option>Price - High to Low</option>
+                                <option>Price - Low to High</option>
+                                <option>Newest Items</option>
+                                <option>Older Items</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div> -->
 
-
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/01.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/01.gif" title=""><i class="flaticon-add"></i></a>
+                    <div class="row blog-grid shop-grid">
+                        <div class="col-md-4">
+                            <div class="course-box shop-wrapper">
+                                <div class="image-wrap entry">
+                                    <img src="images/books/01.gif" alt="" class="img-responsive">
+                                    <div class="magnifier">
+                                        <a data-toggle="modal" data-target="#book7" title="book"><i class="flaticon-add"></i></a>
+                                    </div>
                                 </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/02.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/02.gif" title=""><i class="flaticon-add"></i></a>
+                                <!-- end image-wrap -->
+                                <div class="course-details shop-box text-center">
+                                    <h4>
+                                        <a data-toggle="modal" data-target="#book7" title="book">Isai Natiya School Amaipathu Yeppadi</a>
+                                        <!-- <small>Bags</small> -->
+                                    </h4>
                                 </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+                                <!-- end details -->
+                                <div class="course-footer clearfix">
+                                    <div class="pull-left">
+                                        <ul class="list-inline">
+                                            <li><a href="#"><i class="fa fa-shopping-basket"></i> Add Cart</a></li>
+                                        </ul>
+                                    </div><!-- end left -->
+
+                                    <div class="pull-right">
+                                        <ul class="list-inline">
+                                            <li><a href="#">₹40.00</a></li>
+                                        </ul>
+                                    </div><!-- end left -->
+                                </div><!-- end footer -->
+                            </div><!-- end box -->
+                        </div><!-- end col -->
 
 
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/03.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/03.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+                        
+    <!--Modal start-->
+   
+
+  
+  <!-- The Modal -->
+  <div class="modal fade" id="book7">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="row">
+               <div class="col-md-5"><img src="images/books/01.gif" class="img-responsive img-fluid"></div>
+               <div class="col-md-7">
+                 <h3>Chaz Kangeroo Hoodie3</h3>
+                 <span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</span>
+                 <br><br>
+                 <div class="row">
+                 <div class="col-xs-3 col-sm-3">  <input class="form-control" value="1" type="number" min="1" >
                 </div>
-
-
-                <hr class="invis">
-
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/04.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/04.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/05.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/05.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/06.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/06.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+                 <div class="col-xs-9 col-sm-9"><button class="btn btn-success">Add to Card</button>
+                 </div>
+              </div><br>
+              <i class="fa fa-check" style="font-size:20px;color:green"> In stock</i>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" style="background-color:rgb(151, 30, 67);" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <!-- Modal end -->
 
-                <hr class="invis">
-
-                
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/07.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/07.gif" title=""><i class="flaticon-add"></i></a>
+                           <div class="col-md-4">
+                            <div class="course-box shop-wrapper">
+                                <div class="image-wrap entry">
+                                    <img src="images/books-gallery/01.gif" alt="" class="img-responsive">
+                                    <div class="magnifier">
+                                        <a data-toggle="modal" data-target="#book2" title="book"><i class="flaticon-add"></i></a>
+                                    </div>
                                 </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/08.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/08.gif" title=""><i class="flaticon-add"></i></a>
+                                <!-- end image-wrap -->
+                                <div class="course-details shop-box text-center">
+                                    <h4>
+                                        <a data-toggle="modal" data-target="#book2" title="book">30 Days Flute Vaasikka Katrukollungal</a>
+                                        <!-- <small>Bags</small> -->
+                                    </h4>
                                 </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+                                <!-- end details -->
+                                <div class="course-footer clearfix">
+                                    <div class="pull-left">
+                                        <ul class="list-inline">
+                                            <li><a href="#"><i class="fa fa-shopping-basket"></i> Add Cart</a></li>
+                                        </ul>
+                                    </div><!-- end left -->
+
+                                    <div class="pull-right">
+                                        <ul class="list-inline">
+                                            <li><a href="#">₹90.00</a></li>
+                                        </ul>
+                                    </div><!-- end left -->
+                                </div><!-- end footer -->
+                            </div><!-- end box -->
+                        </div><!-- end col -->
 
 
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/09.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/09.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+                        
+    <!--Modal start-->
+   
+
+  
+  <!-- The Modal -->
+  <div class="modal fade" id="book2">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div class="row">
+               <div class="col-md-5"><img src="images/books-gallery/01.gif" class="img-responsive img-fluid"></div>
+               <div class="col-md-7">
+                 <h3>Chaz Kangeroo Hoodie3</h3>
+                 <span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</span>
+                 <br><br>
+                 <div class="row">
+                 <div class="col-xs-3 col-sm-3">  <input class="form-control" value="1" type="number" min="1" >
                 </div>
-
-
-                <hr class="invis">
-
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/10.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/10.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/11.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/11.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/12.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/12.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+                 <div class="col-xs-9 col-sm-9"><button class="btn btn-success">Add to Card</button>
+                 </div>
+              </div><br>
+              <i class="fa fa-check" style="font-size:20px;color:green"> In stock</i>
                 </div>
-
-                <hr class="invis">
-
-                
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/13.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/13.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/14.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/14.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+            </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" style="background-color:rgb(151, 30, 67);" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    <!-- Modal end -->
 
 
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/15.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/15.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                    </div><br><br>
-                             
-                       <div class="row">      
-                             <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/16.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/16.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/17.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/17.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/18.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/18.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+    <div class="col-md-4">
+        <div class="course-box shop-wrapper">
+            <div class="image-wrap entry">
+                <img src="images/books-gallery/02.gif" alt="" class="img-responsive">
+                <div class="magnifier">
+                    <a data-toggle="modal" data-target="#book3" title="book"><i class="flaticon-add"></i></a>
                 </div>
+            </div>
+            <!-- end image-wrap -->
+            <div class="course-details shop-box text-center">
+                <h4>
+                    <a data-toggle="modal" data-target="#book3" title="book">30 Days Keyboard Vaasikka Katrukollungal</a>
+                    <!-- <small>Bags</small> -->
+                </h4>
+            </div>
+            <!-- end details -->
+            <div class="course-footer clearfix">
+                <div class="pull-left">
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fa fa-shopping-basket"></i> Add Cart</a></li>
+                    </ul>
+                </div><!-- end left -->
+
+                <div class="pull-right">
+                    <ul class="list-inline">
+                        <li><a href="#">₹60.00</a></li>
+                    </ul>
+                </div><!-- end left -->
+            </div><!-- end footer -->
+        </div><!-- end box -->
+    </div><!-- end col -->
 
 
-                <hr class="invis">
-
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/19.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/19.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/20.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/20.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+    
+<!--Modal start-->
 
 
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/21.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/21.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                </div>
 
-                <hr class="invis">
+<!-- The Modal -->
+<div class="modal fade" id="book3">
+<div class="modal-dialog modal-xl">
+<div class="modal-content">
 
-                
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/22.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/22.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+<!-- Modal Header -->
+<div class="modal-header">
+<h4 class="modal-title">Modal Heading</h4>
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
 
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/23.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/23.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
+<!-- Modal body -->
+<div class="modal-body">
+<div class="row">
+<div class="col-md-5"><img src="images/books-gallery/02.gif" class="img-responsive img-fluid"></div>
+<div class="col-md-7">
+<h3>Chaz Kangeroo Hoodie3</h3>
+<span>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</span>
+<br><br>
+<div class="row">
+<div class="col-xs-3 col-sm-3">  <input class="form-control" value="1" type="number" min="1" >
+</div>
+<div class="col-xs-9 col-sm-9"><button class="btn btn-success">Add to Card</button>
+</div>
+</div><br>
+<i class="fa fa-check" style="font-size:20px;color:green"> In stock</i>
+</div>
+</div>
+</div>
 
+<!-- Modal footer -->
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" style="background-color:rgb(151, 30, 67);" data-dismiss="modal">Close</button>
+</div>
 
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/24.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/24.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                </div>
-
-
-                <hr class="invis">
-
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/25.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/25.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/26.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/26.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/27.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/27.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                </div>
-
-                <hr class="invis">
-
-                
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/28.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/28.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/29.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/29.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/30.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/30.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                    </div>
-
-
-                      <br><br>
-                             
-                       <div class="row">      
-                             <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/31.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/31.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/32.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/32.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/33.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/33.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                </div>
-
-
-                <hr class="invis">
-
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/34.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/34.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/35.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/35.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/36.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/36.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                </div>
-
-                <hr class="invis">
-
-                
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/37.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/37.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/38.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/38.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/39.gif" alt="" class="img-responsive same-books-size">
-                                <div class="magnifier">
-                                     <a href="images/books/39.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                </div>
-
-
-                <hr class="invis">
-
-                  <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/40.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/40.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/41.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/41.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/42.gif" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/42.gif" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-                </div>
-
-                <hr class="invis">
-
-                
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/43.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/43.jpg" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/44.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/44.jpg" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/45.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/45.jpg" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-              
-
-                   <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/46.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/46.jpg" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/47.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/47.jpg" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-
-
-                      <div class="col-sm-6 col-md-4">
-                        <div class="course-box">
-                            <div class="image-wrap entry">
-                                <img src="images/books/48.jpg" alt="" class="img-responsive">
-                                <div class="magnifier">
-                                     <a href="images/books/48.jpg" title=""><i class="flaticon-add"></i></a>
-                                </div>
-                            </div><!-- end image-wrap -->
-                          </div><!-- end box -->
-                      </div>
-              
-
-
+</div>
+</div>
+</div>
+<!-- Modal end -->
                 </div>
             </div><!-- end container -->
         </section>
-
-        <!--books Page End-->
 
 
 
@@ -805,7 +758,7 @@
 
                     <div class="pull-right">
                         <div class="footer-links">
-                            <ul class="list-inline">
+                           <ul class="list-inline">
                                 <li>Copyrights © <script>var d = new Date(); document.write( [d.getFullYear()] );</script> Natyacharya Schools |</li><br>
                                 <li> Materialized by <a href="https://www.magniontechnologies.co.in/">Magnion Technology Factory</a></li>
                             </ul>
@@ -815,6 +768,9 @@
             </div><!-- end container -->
         </div><!-- end copy -->
     </div><!-- end wrapper -->
+
+  
+
 
     <!-- jQuery Files -->
     <script src="js/jquery.min.js"></script>
