@@ -42,6 +42,36 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
+        .top-change{
+           color: antiquewhite;
+           animation: anim1 3s infinite alternate-reverse;
+         /*  animation-name: anim;
+           animation-duration: 2s;
+           animation-iteration-count: infinite;
+           animation-direction: alternate;*/
+        }
+
+        @keyframes anim1{
+       
+           0%{
+               color: rgb(255, 255, 249);
+               background-color: rgb(21, 167, 167);
+               padding: 20px;
+               
+            } 
+            
+            
+            50%{
+                color: black;
+               background-color: rgb(255, 0, 0);
+               
+            } 100%{
+               background-color:darkblue;
+               color: white;
+            } 
+        }
+
+
         .change{
            color: antiquewhite;
            animation: anim 3s infinite alternate-reverse;
@@ -110,7 +140,7 @@
 
 
 <header class="header header-normal">
-    <div class="topbar change clearfix">
+    <div class="topbar top-change clearfix">
         <div class="container">
             <div class="row-fluid">
                 <div class="col-md-6 col-sm-6 text-left">
