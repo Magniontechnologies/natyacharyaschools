@@ -2312,16 +2312,16 @@ MICS
     margin: 0 auto;
     left: 1%;
     right: 1%;
-    top: 30%;
-    width: 200px;
-    height: 200px;
+    top: 47%;
+    /* width: 65px;
+    height: 65px; */
     background: center center no-repeat none;
-    background-size: 200px 200px;
-    -webkit-border-radius: 50%;
+    background-size: 65px 65px;
+    /* -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    border-radius: 50%
+    border-radius: 50% */
 }
 
 
