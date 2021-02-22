@@ -4,6 +4,12 @@ IMPORT
 
       /* Make the image fully responsive */
 
+      /* All Gary Text to Blue text*/
+
+      .gray-to-blue{
+          color: #800000;
+      }
+
       /* carousel start */
   .carousel-inner img {
     width: 100%;
